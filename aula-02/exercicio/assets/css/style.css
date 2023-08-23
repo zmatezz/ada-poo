@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+body {
+  justify-content: center;
+  align-content: center;
+  background: linear-gradient(60deg, rgb(3, 5, 2) 0%, rgb(30, 53, 29) 100%) no-repeat;
+  background-repeat: no-repeat;
+}
+
+.calculator{
+  background-color: rgb(172, 172, 172);
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  padding: 30px;
+  gap: 12px;
+  border-radius: 8px;
+}
+
+.teste{
+  width: 100%;
+  height: 233px;
+  background-color: rgb(24, 29, 35);
+  position: relative;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  padding: 20px;
+  border-radius: 6px;
+  grid-column: 1 / -1;
+  overflow: hidden;
+}
+
+main{
+  height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.calculator {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid #00000038;
+  outline: none;
+  background-color: #111;
+  color: #eee;
+  border-radius: 8px;
+}
+
+.calculator > button:hover {
+  background-color: #333;
+}
+
+.calculator > .operator:hover {
+  background-color: #1d8500;
+}
+
+.calculator > .operator {
+  background-color: #23a300;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.teste > .output {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  background-color: rgb(87, 90, 68);
+  height: 120px;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  border-width: 10px;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  border-image: initial;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.teste > .output > .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+}
+
+.teste > .output > .current-operand {
+  color: rgb(255, 255, 255);
+  font-size: 2.5rem;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+}
