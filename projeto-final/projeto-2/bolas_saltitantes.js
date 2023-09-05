@@ -1,7 +1,7 @@
 class Canvas {
   constructor() {
-    this.canvas = document.getElementById("canvas");
-    this.ctx = this.canvas.getContext("2d");
+    this.canvas = document.getElementById('canvas');
+    this.ctx = this.canvas.getContext('2d');
   }
 
   clear() {
@@ -13,10 +13,8 @@ class Bola {
   constructor(canvas) {
     this.canvas = canvas;
     this.radius = Math.random() * 20 + 10;
-    this.x =
-      Math.random() * (canvas.canvas.width - 2 * this.radius) + this.radius;
-    this.y =
-      Math.random() * (canvas.canvas.height - 2 * this.radius) + this.radius;
+    this.x = Math.random() * (canvas.canvas.width - 2 * this.radius) + this.radius;
+    this.y = Math.random() * (canvas.canvas.height - 2 * this.radius) + this.radius;
     this.velX = Math.random() * 4 - 2;
     this.velY = Math.random() * 4 - 2;
     this.color = getRandomColor();
@@ -26,16 +24,10 @@ class Bola {
     this.x += this.velX;
     this.y += this.velY;
 
-    if (
-      this.x - this.radius < 0 ||
-      this.x + this.radius > this.canvas.canvas.width
-    ) {
+    if (this.x - this.radius < 0 || this.x + this.radius > this.canvas.canvas.width) {
       this.velX *= -1;
     }
-    if (
-      this.y - this.radius < 0 ||
-      this.y + this.radius > this.canvas.canvas.height
-    ) {
+    if (this.y - this.radius < 0 || this.y + this.radius > this.canvas.canvas.height) {
       this.velY *= -1;
     }
   }
@@ -52,7 +44,7 @@ class Bola {
 class Vaca {
   constructor(canvas) {
     this.canvas = canvas;
-    this.emoji = "🐄";
+    this.emoji = '🐄';
     this.width = 50;
     this.height = 50;
     this.x = Math.random() * (canvas.canvas.width - this.width);
@@ -74,14 +66,14 @@ class Vaca {
   }
 
   desenhar() {
-    this.canvas.ctx.font = "40px Arial";
+    this.canvas.ctx.font = '40px Arial';
     this.canvas.ctx.fillText(this.emoji, this.x, this.y);
   }
 }
 
 function getRandomColor() {
-  const letters = "0123456789ABCDEF";
-  let color = "#";
+  const letters = '0123456789ABCDEF';
+  let color = '#';
   for (let i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
@@ -104,13 +96,9 @@ function apagarBolas() {
   canvas.clear();
 }
 
-document
-  .getElementById("adicionarBola")
-  .addEventListener("click", adicionarBola);
-document
-  .getElementById("adicionarVaca")
-  .addEventListener("click", adicionarVaca);
-document.getElementById("apagarBolas").addEventListener("click", apagarBolas);
+document.getElementById('adicionarBola').addEventListener('click', adicionarBola);
+document.getElementById('adicionarVaca').addEventListener('click', adicionarVaca);
+document.getElementById('apagarBolas').addEventListener('click', apagarBolas);
 
 function renderizar() {
   canvas.clear();
